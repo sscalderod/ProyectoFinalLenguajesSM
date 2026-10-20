@@ -1,11 +1,39 @@
-# ProyectoFinalLenguajesSM
-## Student Information
-- **Names:** Samuel Calderon Duque & Matias Monsalve Ruiz.
-- **Class Number:** 7309.
-## System and Tools 
-- **Operating System:** Windows 11 / MacOs Sequoia.
+# LL(1) and SLR(1) Parser Generator
+
+Python program that reads a context-free grammar, computes its **FIRST** and **FOLLOW** sets, and builds two parsers from it: an **LL(1)** predictive parser and an **SLR(1)** shift-reduce parser. It reports whether the grammar is LL(1), SLR(1), both or neither, and then validates input strings with the parser you choose.
+
+Final project, Universidad EAFIT (2025-1). Written in **Python 3.13 using only the standard library** (no parsing libraries).
+
+## Features
+
+- Reads a grammar from the console and identifies its terminals, nonterminals and start symbol.
+- Computes FIRST and FOLLOW sets for every nonterminal.
+- **LL(1):** builds the predictive parsing table and validates strings with a stack-based derivation.
+- **SLR(1):** builds the LR(0) automaton (closure and goto over item sets) and the ACTION/GOTO tables, then validates strings with shift/reduce operations.
+- Detects table conflicts to decide which parsers apply to the grammar.
+
+## Code structure
+
+| Component | Responsibility |
+|---|---|
+| `Grammar` | Parses the productions and computes FIRST and FOLLOW sets |
+| `LL1Parser` | Builds the LL(1) table and runs the predictive parse |
+| `SLR1Parser` | Builds the LR(0) automaton and ACTION/GOTO tables and runs the shift/reduce parse |
+| `main()` / `parse_strings()` | Console interaction: grammar input, parser selection and string validation |
+
+The full write-up is in [`Proyectofinallenguajes.pdf`](Proyectofinallenguajes.pdf).
+
+## Authors
+
+- **Samuel Calderón Duque**: [GitHub](https://github.com/sscalderod) · [LinkedIn](https://www.linkedin.com/in/samuel-calderon-duque-b8772b37a/)
+- **Matías Monsalve Ruiz**
+
+## System and Tools
+
+- **Operating System:** Windows 11 / macOS Sequoia.
 - **Programming Language:** Python 3.13.
 - **Tools:** PyCharm 2024.3.3.
+
 ## Instruction
  Have Python installed, open the IDE of your preference, open the file "parser.py" after that run the files as follows: 
 
